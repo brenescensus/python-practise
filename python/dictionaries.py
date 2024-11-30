@@ -15,15 +15,19 @@ while True:
     order=input("what would you like to order?").lower()
     if order in menu:
         quantity=int(input("how many would you like to order?"))
-        total=total+(quantity*menu[order])
-        cart.append((order,quantity,total))
+        total1=quantity*menu[order]
+        total=total+total1
+        cart.append((order,quantity,total1))
         print(f"{quantity} {order} has been added to your cart")
     elif order=="q":
         break    
     else:
         print("sorry we dont have that item")
-
-
+print("***************items*****************") 
+print("item    quantity     price")
+for item in cart:
+    print(f"{item[0]}.....{item[1]}.....{item[2]}")
+# print(cart)
 print(f"the total is {total}")        
         
         
